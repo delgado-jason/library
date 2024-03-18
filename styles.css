@@ -91,3 +91,99 @@ h1 {
 .read {
     color: #5cd03f;
 }
+
+form {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    width: 178px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+
+li {
+    margin-bottom: 32px;
+    display: flex;
+}
+
+label {
+    width: 61px;
+    font-size: 16px;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.form-radio {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-radio > label,  input {
+    margin: 0;
+    margin-right: 0;
+}
+
+.form-radio > label,
+.form-radio > input {
+    width: auto;
+}
+
+:root {
+    --radio-border-color: #8e10f1;
+    --radio-checked-color: #3f086a;
+    --radio-hover-color: #a3cef1;
+    --radio-disabled-bg-color: #d9d9d9;
+}
+
+input[type="radio"] {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 2px solid var(--radio-border-color);
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+}
+
+input[type="radio"]:not(:disabled):checked {
+    border-color: var(--radio-checked-color);
+    background-color: var(--radio-checked-color);
+    background-clip: content-box;
+    padding: 2px;
+    background-image: radial-gradient(
+      circle,
+      var(--radio-checked-color) 0%,
+      var(--radio-checked-color) 50%,
+      transparent 60%,
+      transparent 100%
+    );
+}
+
+button {
+    width: 102px;
+    height: 32px;
+    margin-bottom: 32px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #8e10f1;
+    color: #d2d2d2;
+    box-shadow: 2px 2px 3px #3f086a;
+}
+
+
+
