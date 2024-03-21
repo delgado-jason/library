@@ -8,6 +8,49 @@ const listen = new Book('Listen For The Lie', 'Amy Tintera', 421, true);
 
 const myLibrary = [identity, women, dune, listen];
 
+// Display books
+function displayBooks() {
+    const booksSection = document.querySelector('.books');
+
+    // Add content to the elements
+    // Loop through the library array and display
+    for(let i = 0; i < myLibrary.length; i++) {
+
+        // Create the elements
+        const bookDiv = document.createElement('div');
+        const bookHeaderDiv = document.createElement('div');
+        const bookTitleDiv = document.createElement('div');
+        const bookAuthorDiv = document.createElement('div');
+        const bookSubContentDiv = document.createElement('div');
+        const bookPageCountDiv = document.createElement('div');
+        const bookHasReadDiv = document.createElement('div');
+
+        // Set classes for the elements
+        bookDiv.setAttribute('class', 'book');
+        bookHeaderDiv.setAttribute('class', 'book-header');
+        bookTitleDiv.setAttribute('class', 'title');
+        bookAuthorDiv.setAttribute('class', 'author');
+        bookSubContentDiv.setAttribute('class', 'sub-content');
+        bookPageCountDiv.setAttribute('class', 'page-count');
+        bookHasReadDiv.setAttribute('class', 'read has-read');
+
+        bookTitleDiv.textContent = myLibrary[i].title;
+        bookAuthorDiv.textContent = myLibrary[i].author;
+        bookHeaderDiv.appendChild(bookTitleDiv);
+        bookHeaderDiv.appendChild(bookAuthorDiv);
+        bookPageCountDiv.textContent = myLibrary[i].pages;
+        bookHasReadDiv.textContent = myLibrary[i].read;
+        bookSubContentDiv.appendChild(bookPageCountDiv);
+        bookSubContentDiv.appendChild(bookHasReadDiv);
+
+        bookDiv.appendChild(bookHeaderDiv);
+        bookDiv.appendChild(bookSubContentDiv);
+        booksSection.appendChild(bookDiv);
+    }; 
+    
+}
+displayBooks();
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
